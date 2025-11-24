@@ -1,34 +1,145 @@
+/* ======= Estilo CyberLab NEÓN — Helen ======= */
+
 :root{
-  --bg:#0b0f14; --card:#0f1720; --muted:#93a3b6; --accent:#6ee7b7; --accent2:#60a5fa;
-  --glass: rgba(255,255,255,0.03);
-  --card-pad:18px;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --bg: #05060a;
+  --text: #dff8ff;
+  --panel-radius: 14px;
+
+  /* Colores de cada sección */
+  --upload-color: #0ea5e9;      /* azul neón */
+  --results-color: #a855f7;     /* morado neón */
+  --dynamic-color: #22c55e;     /* verde neón */
+  --report-color: #ec4899;      /* rosado fuerte */
+
+  --glass: rgba(255,255,255,0.05);
+  --border: rgba(255,255,255,0.12);
+
+  font-family: "Inter", sans-serif;
 }
-*{box-sizing:border-box}
+
 body{
-  margin:0; background:linear-gradient(180deg,#06111a 0%, #071323 100%); color:#e6eef6;
-  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  background: radial-gradient(circle at top, #0a0f1d, #05060a 60%);
+  margin: 0;
+  color: var(--text);
 }
-header{padding:28px 24px; text-align:center}
-h1{margin:0;font-size:20px}
-.subtitle{color:var(--muted); margin:6px 0 0;}
-.container{display:grid; grid-template-columns: 1fr; gap:18px; padding:18px; max-width:1100px; margin:0 auto;}
-.panel{background:var(--card); border-radius:12px; padding:var(--card-pad); box-shadow:0 6px 18px rgba(2,6,23,0.6);}
-.row{display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;}
-.btn{background:linear-gradient(90deg,var(--accent2),var(--accent)); border:none; color:#071323; font-weight:700; padding:10px 12px; border-radius:8px; cursor:pointer;}
-.btn:hover{opacity:0.95; transform:translateY(-1px)}
-.btn.big{padding:14px 18px; font-size:16px}
-.upload input[type=file]{background:var(--glass); padding:8px; color:var(--muted); border-radius:8px; width:100%}
-.output{background:rgba(255,255,255,0.02); padding:12px; border-radius:8px; min-height:44px; overflow:auto}
-.output.small{min-height:20px; padding:8px}
-.code{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace; font-size:13px}
-.grid{display:grid; grid-template-columns: 1fr 1fr; gap:12px}
-.list{list-style:none; padding-left:0; margin:0}
-.list li{background:rgba(255,255,255,0.02); margin:6px 0; padding:8px; border-radius:6px}
-.simArea{margin-top:12px}
-#trafficChart{width:100%; height:160px; background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent); border-radius:8px; padding:8px}
-footer{padding:12px 24px; color:var(--muted); text-align:center; font-size:13px}
-@media(min-width:900px){
-  .container{grid-template-columns: 1fr 520px}
-  .grid{grid-template-columns: 1fr 1fr}
+
+/* Header */
+header{
+  text-align:center;
+  padding: 30px 20px;
+}
+header h1{
+  margin: 0;
+  font-size: 28px;
+  background: linear-gradient(90deg, #0ea5e9, #a855f7, #22c55e);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+header .subtitle{
+  margin-top: 8px;
+  font-size: 14px;
+  color: #8fa6c1;
+}
+
+/* Grid general */
+.container{
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  gap: 20px;
+}
+
+/* Panel base */
+.panel{
+  border-radius: var(--panel-radius);
+  padding: 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  box-shadow: 0 0 15px rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+}
+
+/* COLORES POR SECCIÓN */
+.upload{
+  border-left: 6px solid var(--upload-color);
+  box-shadow: 0 0 10px var(--upload-color);
+}
+
+.results{
+  border-left: 6px solid var(--results-color);
+  box-shadow: 0 0 10px var(--results-color);
+}
+
+.dynamic{
+  border-left: 6px solid var(--dynamic-color);
+  box-shadow: 0 0 10px var(--dynamic-color);
+}
+
+.report{
+  border-left: 6px solid var(--report-color);
+  box-shadow: 0 0 10px var(--report-color);
+}
+
+/* Botones */
+.btn{
+  background: linear-gradient(90deg, #0ea5e9, #a855f7);
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  padding: 11px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+.btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px #0ea5e9;
+}
+.btn.big{
+  background: linear-gradient(90deg, #22c55e, #0ea5e9);
+}
+
+/* Inputs */
+.upload input[type=file]{
+  width:100%;
+  padding: 10px;
+  background: var(--glass);
+  border-radius: 10px;
+  color: var(--text);
+}
+
+/* Outputs */
+.output{
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 10px;
+  min-height: 45px;
+  font-size: 13px;
+}
+
+/* Lista */
+.list li{
+  background: rgba(255,255,255,0.05);
+  margin: 6px 0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Chart */
+#trafficChart{
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+}
+
+/* Footer */
+footer{
+  text-align:center;
+  color:#8fa6c1;
+  padding: 20px;
+  font-size: 13px;
 }
