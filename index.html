@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CyberLab – Valen y Karol</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>CyberLab – Valen y Karol</h1>
+    <p class="subtitle">Laboratorio Web – Análisis de Malware (Simulado)</p>
+  </header>
+
+  <main class="container">
+    <section class="panel upload">
+      <h2>1. Cargar muestra</h2>
+      <input id="fileInput" type="file" />
+      <div class="row">
+        <button id="btnHash" class="btn">Calcular SHA-256</button>
+        <button id="btnStrings" class="btn">Extraer Strings</button>
+        <button id="btnStatic" class="btn">Análisis estático</button>
+        <button id="btnDynamic" class="btn">Análisis dinámico</button>
+      </div>
+      <div id="fileInfo" class="output small"></div>
+    </section>
+
+    <section class="panel results">
+      <h2>2. Resultados</h2>
+      <div class="grid">
+        <div>
+          <h3>SHA-256</h3>
+          <pre id="shaOutput" class="output"></pre>
+        </div>
+        <div>
+          <h3>Metadata</h3>
+          <pre id="metaOutput" class="output"></pre>
+        </div>
+        <div style="grid-column:1/3">
+          <h3>Strings extraídas</h3>
+          <div id="stringsOutput" class="output code"></div>
+        </div>
+        <div>
+          <h3>Imports detectados</h3>
+          <ul id="importsOutput" class="list"></ul>
+        </div>
+        <div>
+          <h3>Indicadores (IoCs)</h3>
+          <ul id="iocsOutput" class="list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel dynamic">
+      <h2>3. Análisis dinámico simulado</h2>
+      <button id="btnRunSim" class="btn big">Ejecutar simulación</button>
+      <div id="simArea" class="simArea">
+        <h4>Gráfico de tráfico</h4>
+        <svg id="trafficChart" viewBox="0 0 600 160"></svg>
+        <h4>Procesos generados</h4>
+        <ul id="processList" class="list"></ul>
+      </div>
+    </section>
+
+    <section class="panel report">
+      <h2>4. Informe</h2>
+      <button id="btnReport" class="btn">Generar informe</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto creado por Valen y Karol · CyberLab</p>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
