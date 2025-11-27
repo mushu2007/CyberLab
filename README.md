@@ -1,4 +1,4 @@
-# CyberLab – 
+# CyberLab 
 Laboratorio Web de Análisis de Malware (Simulado)  
 Proyecto académico – Universidad – Parcial
 
